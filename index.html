@@ -6,18 +6,19 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <h1>Rankings</h1>
-    <input id="rankInput" type="text">
-    <br>
-    <button id="add">Add To Rankings</button>
+    <div id="container">
+      <h1 id="title">Rankings</h1>
+      <button id="add">Add To Rankings</button>
+      <input id="rankInput" type="text">
 
-    <ul id="rankings">
-      <li>Jollyby, 42 pts</li>
-      <li>Janet Pluchinsky, 30 pts</li>
-      <li>Alice Quinn, 27 pts</li>
-    </ul>
+      <ul id="rankings">
+        <li><span class="nameText">Jollyby</span><span class="pointText">42 Pts</span></li>
+        <li>Janet Pluchinsky, 30 pts</li>
+        <li>Alice Quinn, 27 pts</li>
+      </ul>
 
-    <button id="clear">Clear Rankings</button>
+      <button id="clear">Clear Rankings</button>
+    </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.0.0/lodash.min.js"></script>
