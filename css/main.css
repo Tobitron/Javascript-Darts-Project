@@ -29,3 +29,9 @@ li {
 	float: right;
 	margin-right: 1em;
 }
+
+.playerText{
+	position: absolute;
+	font-size: 1.5em;
+	padding: .5em;
+}
