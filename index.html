@@ -3,20 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>EverQuoteTest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+   <div class="logoContainer">
+     <img class="shieldImage" src="dart_king_icon_red_small.png">
+     <h1><strong>Dart King</strong></h1>
+     <p class="catchPhrase">Where Darts ... Rule!™</p>
+   </div>
     <div id="container">
-      <h1 id="title">Rankings</h1>
-      <button id="add">Add To Rankings</button>
-      <input id="nameInput" type="text">
-      <input id="scoreInput" type="text">
+      <button id="add" class="waves-effect waves-light btn-large indigo">Add To Rankings</button>
+      <div class="input-field">
+        <input id="rankInput" type="text">
+        <label for="rankInput">Name, Score</label>
+      </div>
       <ul id="rankings"></ul>
-      <button id="clear">Clear Rankings</button>
+      <button id="clear" class="waves-effect waves-light btn-large indigo">New Game</button>
     </div>
-
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.0.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -1,33 +1,53 @@
-#container {
-	margin: 0 auto;
-	width: 60%;
+body {
+	background-color: #F5F5F5;
 }
 
-#title {
-	text-align: center;
+#container {
+	margin: 0 auto;
+	width: 75%;
+}
+
+.logoContainer {
+   width: 25em;
+   margin-left: auto;
+	 margin-right: auto;
+	 margin-top: 5em;
+	 margin-bottom: 5em;
+}
+
+.catchPhrase {
+  margin-top: -.8em;
+  font-size: 1.8em;
+	font-weight: 300;
+}
+
+.shieldImage {
+	float: left;
 }
 
 ul {
-	margin-top: 2em;
-	margin-bottom: 2em;
+	margin-top: 1em;
 	padding-left: 0;
 	list-style: none;
 }
 
 li {
-	height: 3em;
-	margin-bottom: .3em;
+	height: 4em;
+	margin-bottom: .5em;
   background-color: palegreen;
-  border: 1px solid rgba(42, 41, 41, 0.21);
 }
 
-.nameText {
-	margin-left: 1em;
+#add {
+	margin-right: 2em;
 }
 
-.pointText {
-	float: right;
-	margin-right: 1em;
+#clear {
+	display: none;
+}
+
+.input-field {
+	display: inline-block;
+	width: 15em;
 }
 
 .playerText{
