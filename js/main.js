@@ -1,26 +1,27 @@
 var playerScores = [];
 var inputName = "";
-var inputScore = 0;
+var inputScore = undefined;
 
 $("#add").click(function(){
 	var newRanking = $('#rankInput').val();
 
-	if ( newRanking.search(/., \d/) != -1 ) {
+	if (newRanking.search(/., \d/) != -1) {
 		indexOfComma = newRanking.indexOf(",");
 		inputName = newRanking.slice(0, indexOfComma);
 		inputScore = newRanking.slice(indexOfComma + 2, newRanking.length);
+
+		if (validate() == true) {
+			var data = createListItemHTML(addNewScore(inputName, inputScore));
+			$("#rankings").empty();
+			$("#rankings").append(data);
+			$("#clear").css("display", "inline")
+		};
 	} else {
 		alert("Please enter your score in the format: 'Name, score'");
 	};
 
-	if (validate() == true) {
-		var data = createListItemHTML(addNewScore(inputName, inputScore));
-		$("#rankings").empty();
-		$("#rankings").append(data);
-		$("#clear").css("display", "inline")
-	}
 	emptyInputField();
-});
+})
 
 // remove #rankings and reset playerScores
 $("#clear").click(function(){
@@ -28,11 +29,11 @@ $("#clear").click(function(){
 	$("#clear").css("display", "none")
 	$("#rankings").empty();
 	playerScores = [];
-});
+})
 
 function emptyInputField() {
 	$('#rankInput').val("");
-};
+}
 
 // Create each li
 function createListItemHTML(sortedArray) {
@@ -45,11 +46,11 @@ function createListItemHTML(sortedArray) {
 		output += "<li style='width: " + getLiWidth(highScore, score) + "'><div class='playerText'>" + sortedArray[i].rank + ". " + playerName + ", " + score + " " + getPointsText(score) + "</div></li>"
 	}
 	return output
-};
+}
 
 function getLiWidth(highestScore, playerScore) {
     return (playerScore / highestScore) * 100 + "%"
-};
+}
 
 function getPointsText(score) {
 	if (score == 1) {
@@ -57,7 +58,7 @@ function getPointsText(score) {
 	} else {
 		return "Points"
 	};
-};
+}
 
 function setRank(sortedArray) {
   var score = 0;
@@ -65,17 +66,17 @@ function setRank(sortedArray) {
   var prevPosition = 1
 
 	while (i < sortedArray.length) {
-      if (sortedArray[i].score == score) {
-          sortedArray[i].rank = prevPosition;
-      } else {
-          sortedArray[i].rank = i + 1;
-          score = sortedArray[i].score;
-          prevPosition = i + 1;
-      }
-			i++;
+    if (sortedArray[i].score == score) {
+        sortedArray[i].rank = prevPosition;
+    } else {
+        sortedArray[i].rank = i + 1;
+        score = sortedArray[i].score;
+        prevPosition = i + 1;
+    }
+		i++;
 	};
   return sortedArray;
-};
+}
 
 function addNewScore(inputName, inputScore) {
 var playerPresent = false;
@@ -97,7 +98,7 @@ var playerPresent = false;
 	playerScores.sort(function(a, b) {return b.score - a.score} );
 
 	return setRank(playerScores);
-};
+}
 
 
 function validate() {
@@ -126,4 +127,4 @@ function validate() {
 	} else {
 		return false
 	}
-};
+}
